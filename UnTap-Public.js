@@ -87,7 +87,7 @@ var screen_size = Global.GetScreenSize();
 
 function main()
 {
-	var font = Render.AddFont("Arialbd.ttf", 11.4, 900)	
+	var font = Render.GetFont( "Arial.ttf",12,true );
 	selectedcp = UI.GetColor(["Config", "Indicators", "Indicators", "Real Color"])
 	selectedcp1 = UI.GetColor(["Config", "Indicators", "Indicators", "Desync Color"])
 	if ( UI.GetValue(["Config", "Indicators", "Indicators","Debug Indicators"]) == 0){
@@ -100,7 +100,7 @@ function main()
 }
 
 function deysnc() {
-	var font = Render.AddFont("Arialbd.ttf", 11.4, 900)
+	var font = Render.GetFont( "Arial.ttf",12,true );
 	
 	var Real3 = 70; //UI.GetValue(["Config", "Untap", "Untap", "Real Sway Angle A"])
 	var LBY3 = -60; //UI.GetValue(["Config", "Untap", "Untap", "LBY Sway Angle B"]);
@@ -130,7 +130,7 @@ function deysnc() {
     }
 }
 function deysnc1() {
-	var font = Render.AddFont("Arialbd.ttf", 11.4, 900)
+	var font = Render.GetFont( "Arial.ttf",12,true );
 	
 	var Real3 = 70; //UI.GetValue(["Config", "Untap", "Untap", "Real Sway Angle A"])
 	var LBY3 = -60; //UI.GetValue(["Config", "Untap", "Untap", "LBY Sway Angle B"]);
@@ -186,7 +186,7 @@ function draw() {
 		var ebanaya_hueta = Math.round(Entity.GetProp(Entity.GetLocalPlayer(), "CPlayerResource", "m_iPing")).toString()
 
 		
-		var font3 = Render.AddFont("Arialbd.ttf", 12, 900)
+		var font3 = Render.GetFont( "Arial.ttf",12,true );
 		var text = "UnTap Public| " + username + " | rate: " + server_tickrate + " | ms: " + ebanaya_hueta + " | " + hours + minutes + seconds;
 		
 		var w = Render.TextSize(text, font3)[0] + 8;
@@ -368,7 +368,6 @@ function DropDown() {
     {
 		/*
         UI.SetEnabled( ["Config", "Untap", "Untap"], "|                      Custom                       |", true );
-
 		*/
     }  else if (tag == 1)
     {
